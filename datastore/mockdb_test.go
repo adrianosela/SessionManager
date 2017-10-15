@@ -127,6 +127,9 @@ func TestMockStore(t *testing.T) {
 
 			err := db.deleteUser(userToDelete)
 			So(err, ShouldNotBeNil)
+
+			//cleanup
+			db.Users = []users.User{}
 		})
 
 	})
@@ -224,6 +227,9 @@ func TestMockStore(t *testing.T) {
 
 			err := db.deleteSession(sessToDelete)
 			So(err, ShouldNotBeNil)
+
+			//cleanup
+			db.Sessions = []session.Session{}
 		})
 
 	})
